@@ -51,3 +51,11 @@
     // Follow #2 - #9
 
     // git stash - Stash the changes that you have done in your local and want to switch to other branch without commiting the changes
+
+
+    // 1. node js
+    // 2. VS code
+    // 3. Typescript - npm install typescript
+    // 4. tsx - npm install tsx
+    // 5. playwright - npm init playwright
+
