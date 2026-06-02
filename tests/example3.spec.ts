@@ -14,6 +14,12 @@ test('get started link',   async ({ page }) => {
    await page.getByRole('link', { name: 'Get started' }).click();
    await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
   
+
+   await page.getByText("Pagination Web Table", {exact: true})
+   await page.getByRole('heading', {name:'Practice Form', exact:true})
+   await page.getByRole('radio', {name:'Female'})
+   await page.getByRole('checkbox', {name:'Tuesday'})
+   await page.getByRole('button', {name:'Submit'})
 });
 
 // Promise - Pending, success , failure

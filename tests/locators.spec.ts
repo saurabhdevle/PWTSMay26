@@ -139,7 +139,8 @@ AXES - xpath
 
   //h1[@class='text-center']/following-sibling::h5[1]
 
-  (//div[@class='ykJuJZ'])[1]/following-sibling::a - to move from one sibling to another sibling - example for Flipkart Abount section.
+  (//div[@class='ykJuJZ'])[1]/following-sibling::a 
+  // - to move from one sibling to another sibling - example for Flipkart Abount section.
 
 5. //input[@id='userEmail']/preceding-sibling::label
 
@@ -149,8 +150,13 @@ AXES - xpath
 
 
 
-// 6. //h2[text() = 'Test login']  -  //h5[text() = 'Student Registration Form']
-// 7. (//h2[contains(text(), 'Test')])[1]
+// 6. //*[text()= 'Text Value of an element']
+
+//h2[text() = 'Test login']  -  //h5[text() = 'Student Registration Form']
+
+// 7. //tagname[contains(text(), "some part of the text value of an element")]
+
+(//h2[contains(text(), 'Test')])[1]
 
 //li[contains(text(),'negative')]
 
@@ -181,6 +187,8 @@ AXES - xpath
 // To write the locator using CSS or XPATH - page.locator("#idvalue")
 
 
+page.locator("#username") OR
+page.locator("//input[@id='username']")
 
 */
 
@@ -193,7 +201,6 @@ AXES - xpath
 These are the recommended built-in locators.
 
 page.getByRole() - Works on the role of an element - button, textbox, checkbox, heading, link, radio, menuitem
-
 page.getByText() - Identify the element by using the text value (contains)
 page.getByLabel()
 page.getByAltText()
@@ -202,10 +209,12 @@ page.getByPlaceholder() -
 page.getByTitle()
 
 
-// ads 
-// ads abcd hghjf
+// <h2>ad</h2>
+// <h2>ads</h2>
 
-page.getByText('ads', {exact:true})
+page.getByText("ad", {exact:true})
+
+page.getByText('ad', {exact:true})
 page.getByText('Practice Form', {exact:true})
 
 
@@ -213,9 +222,10 @@ page.getByText('Practice Form', {exact:true})
 
 // heading - <h1-h6>
 // button - <button> or class="btn"
-// textbox - <input>
-// radio
-// checkbox
+// textbox - <input> or <textarea>
+// radio - type = 'radio'
+// checkbox - type = 'checkbox'
+// link - <a> </a>
 
 page.getByRole('button', {name: 'Submit'})
 
@@ -231,22 +241,31 @@ page.getByRole('button', {name: 'Submit'})
     <label class="form-check-label" <input.....>Tuesday</label>
 
     page.getByLabel("Username")
+    page.getByLabel("Wednesday").last()
 
 4. page.getByPlaceholder('First Name')  - to locate an input by "placeholder" as an attribute.
 
+    page.getByPlaceholder("name@example.com")
+
 5. page.getByAltText() to locate an element, usually image, by its text alternative.("alt" as an attribute)
+
+    page.getByAltText("logo image")
 
 6. page.getByTitle() to locate an element by its "title" attribute.
 
+    page.getByTitle("Home page link")
+
+
 7. page.getByTestId() to locate an element based on its "data-testid" attribute.
 
+    page.getByTestId("edit-profile-btn")
 
 */
 
 
-//await expect(page.getByRole('heading', { name: 'Sign up', exact :true })).toBeVisible();
+// await expect(page.getByRole('heading', { name: 'Sign up', exact :true })).toBeVisible();
 
-//await page.getByRole('checkbox', { name: 'Subscribe' }).check();
+// await page.getByRole('checkbox', { name: 'Subscribe' }).check();
 
 // await page.getByRole('button', { name: 'Submit' }).click();
 
@@ -258,8 +277,7 @@ page.getByRole('button', {name: 'Submit'})
 // 1. page.getByRole() - to locate the element based on the role of an element
 // 2. page.getByText() - to locate the element based on the text content
 // 3. page.getByPlaceholder() - to locate the element based on the placeholder as an attribute
-// 4.page.getByTestId() - to locate the element based on the data-testid as an attribute
+// 4. page.getByTestId() - to locate the element based on the data-testid as an attribute
 
 
-// Fill the input - validation
-// click on element
+// codegen - Code generation - 
