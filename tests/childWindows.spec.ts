@@ -13,10 +13,10 @@
 
 // promise - pending, success or rejected
 
-import {test, expect} from '@playwright/test'
+import {test, expect, Locator} from '@playwright/test'
 
 
-test.only("Handling multiple windows", async ({page})=>{
+test("Handling multiple windows", async ({page})=>{
     await page.goto("https://demo.automationtesting.in/Windows.html")
 
     const page1 = page.waitForEvent("popup")
@@ -28,8 +28,26 @@ test.only("Handling multiple windows", async ({page})=>{
     const newPage = await page1
     // console.log(newPage);
 
-    await newPage.getByText("Downloads", {exact:true}).click()
+    await page.getByText("Downloads", {exact:true}).click()
+
+    await expect(newPage.locator("h2#bindings")).toContainText("WebDriver Language Bindings")
+
+    // const page2 = page.waitForEvent("popup")
+    // // console.log(page1);
+    
+
+    // // Click on the element which is responsible for generation of "popup" event on the page
+    // await page.locator("#Tabbed button").click()
+    // const newPage1 = await page2
+
+    //await page.bringToFront()
+
+    await page.getByText("Home", {exact:true}).click()
+    await expect(page.getByPlaceholder("Email id for Sign Up")).toBeVisible()
     
 
 
 })
+
+// frame
+
