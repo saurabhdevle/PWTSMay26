@@ -4,9 +4,23 @@ import { defineConfig, devices } from '@playwright/test';
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
  */
-// import dotenv from 'dotenv';
-// import path from 'path';
-// dotenv.config({ path: path.resolve(__dirname, '.env') });
+import dotenv from 'dotenv';
+import path from 'path';
+
+// dotenv - is a library which helps us in loading the data from .env file
+// process.env - Is a global object which will read the data from .env file
+
+
+const ENV_NAME = process.env.ENV || 'qa'
+
+
+// path.join(__dirname, 'testdata', 'qa.env')
+
+dotenv.config({ path: path.resolve(__dirname,'testdata', `${ENV_NAME}.env`) });
+
+//  console.log(process.env.ENV);
+
+
 
 
 /*
@@ -39,7 +53,7 @@ export default defineConfig({
   /* Retry on CI only */
   retries: process.env.CI ? 2 : 0,
   /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 1 : 1,
+  workers: process.env.CI ? 5 : 1,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [['html'], ["line"], ["allure-playwright"]],
   timeout : 60000,

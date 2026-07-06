@@ -7,7 +7,9 @@
     "fullTest": "npx playwright test",
     "smokeTest": "npx playwright test -g @smoke",
     "regressionTest": "npx playwright test -g @regression",
-    "lpTest": "npx playwright test tests/LoginPageTest.spec.ts"
+    "lpTest": "npx playwright test tests/LoginPageTest.spec.ts",
+    "test:qa": "set ENV=qa&& npx playwright test tests/LoginPageTestUsingEnv.spec.ts",
+    "test:prod":"set ENV=prod&& npx playwright test tests/LoginPageTestUsingEnv.spec.ts"
   },
   "repository": {
     "type": "git",
@@ -26,6 +28,7 @@
     "@types/node": "^25.9.2",
     "allure-commandline": "^2.43.0",
     "allure-playwright": "^3.10.2",
+    "dotenv": "^17.4.2",
     "xlsx": "^0.18.5"
   }
 }

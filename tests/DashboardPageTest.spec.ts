@@ -40,9 +40,8 @@ test("Search and view product details", {tag: ['@smoke', '@regression']}, async 
 // 1. Object - {name: "Rahul"}
 // 2. JSON - DD using Json
 // 3. Excel - DD
-// 5. Allure
-
 // 4. .env - qa.env, prod.env
+// 5. Allure
 
 
 // 6. Jenkins
@@ -50,3 +49,11 @@ test("Search and view product details", {tag: ['@smoke', '@regression']}, async 
 // 7. MCP - AI
 // 8. Playwright Agent 
 // 9. API test case - Playwright
+
+// dotenv
+
+// Naukri
+// Instahyre
+// WellFound
+// TopHire
+// LinkedIn
