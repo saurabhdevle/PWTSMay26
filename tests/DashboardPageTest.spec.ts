@@ -42,13 +42,14 @@ test("Search and view product details", {tag: ['@smoke', '@regression']}, async 
 // 3. Excel - DD
 // 4. .env - qa.env, prod.env
 // 5. Allure
-
-
 // 6. Jenkins
 
 // 7. MCP - AI
 // 8. Playwright Agent 
-// 9. API test case - Playwright
+// 9. API test case - zxjy,jfyfb 
+
+
+
 
 // dotenv
 
