@@ -8,10 +8,6 @@ pipeline {
         ALLURE_REPORT_DIR = 'allure-report'
     }
 
-    tools {
-        nodejs 'NodeJS'
-    }
-
     stages {
         stage('Checkout') {
             steps {
